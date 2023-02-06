@@ -1,0 +1,40 @@
+.stack {
+  position: relative;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+  width: 100px;
+  height: 100px;
+  margin: 0;
+}
+
+.card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 500px;
+  background: blue;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 1s;
+}
+
+.card-2 {
+  background-color: red;
+}
+
+.card-3 {
+  background-color: green;
+}
+
+.card-4 {
+  background-color: yellow;
+}
+
+.animate-out {
+  transform: translateY(-100%) rotate(180deg);
+}
+
