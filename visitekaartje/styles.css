@@ -33,35 +33,72 @@
   background-color: #CBD18F;
   position: absolute;
   top: 9.5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-3 img {
+  width: 40px;
+  height: 100%;
+  margin: 3rem 12rem 0rem 0rem;
+}
+
+.card-3 p { 
+  color: black;
+  width: 40px;
+  height: 100%;
+  margin: -2rem 4rem 0rem 0rem;
+  
 }
 
 .card-4 {
   background-color: #3A6B35;
-  display: block;
   display:flex;
-
   top: 10%;
 }
 
 .card-4 h1 {
   font-family: 'Josefin Sans', sans-serif;
   position: absolute;
-  top: 60%;
+  top: 10%;
 }
 
 .card-4 h2 {
   font-family: 'Josefin Sans', sans-serif;
   position: absolute;
-  top: 75%;
+  bottom: 10%;
+}
+
+.card-4 a {
+  font-family: 'Josefin Sans', sans-serif;
+  position: absolute;
+  bottom: 7%;
+  color: white;
+  text-decoration: none;
+}
+
+.card-4 a:hover {
+  color:grey;
+  transform: scale(1.1);
+  transition: .5s ease-out;
 }
 
 .card-4 img{
-  width: 200px;
+  width: 300px;
   height: auto;
   position: absolute;
-  bottom: 200px;
   border-radius: 10px;
-  outline: 1px solid black;
+  
+}
+
+.card-4 div {
+  clip-path: polygon(0 0, 5% 0, 5% 67%, 73% 67%, 73% 71%, 0 71%);
+  background-color: white;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 78%;
+  left: 10%;
 }
 
 
