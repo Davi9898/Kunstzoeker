@@ -1,3 +1,4 @@
+const apiNaam = document.querySelector('h1')
 const cards = document.querySelectorAll('.card'); // elementen selecteren met queryselectorAll card
 const order = [...cards].map(card => card.classList[1]); //Maakt een array // ... Spread opeartor wordt gebruikt om de Nodelist returned door QuerySAll in een Array te zetten. map method wordt gebruikt om de tweede class van elke card te extracten
 
@@ -14,7 +15,12 @@ cards.forEach(card => { // maakt een loop die itereert
   });
 });
 
-fetch('https://cors-anywhere.herokuapp.com/https://whois.fdnd.nl/api/v1/member?id=cldex6lhk48ci0auoyotb1ivk')
+fetchData()
+
+function fetchData(){
+const url = 'https://whois.fdnd.nl/api/v1/member?id=cldex6lhk48ci0auoyotb1ivk'
+
+fetch(url)
   .then(response => {
     if (!response.ok) {
       throw new Error('Network response was not ok');
@@ -23,10 +29,18 @@ fetch('https://cors-anywhere.herokuapp.com/https://whois.fdnd.nl/api/v1/member?i
   })
   .then(data => {
     console.log(data);
+    veranderH1(data);
   })
   .catch(error => {
     console.error('There was a problem with the fetch operation:', error);
   });
+}
+
+function veranderH1(data){
+  console.log(data)
+  const name = data.member.name
+  apiNaam.innerHTML = name
+}
 
 
   // cldex6lhk48ci0auoyotb1ivk ID
