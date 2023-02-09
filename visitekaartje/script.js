@@ -1,16 +1,18 @@
+console.log(document.querySelectorAll('.stack .card')) 
 const apiNaam = document.querySelector('h1')
-const cards = document.querySelectorAll('.card'); // elementen selecteren met queryselectorAll card
-const order = [...cards].map(card => card.classList[1]); //Maakt een array // ... Spread opeartor wordt gebruikt om de Nodelist returned door QuerySAll in een Array te zetten. map method wordt gebruikt om de tweede class van elke card te extracten
+const cards = [...document.querySelectorAll('.stack .card')]; // Maakt een Array van Nodelist
+console.log(cards)
 
 cards.forEach(card => { // maakt een loop die itereert 
   card.addEventListener('click', () => { // maakt een click even listener
     card.classList.add('animate-out'); // voegt de class animate-out toe
     setTimeout(() => { // 1 second delay
       card.classList.remove('animate-out'); // Hierdoor stopt de animatie
-      const currentIndex = order.indexOf(card.classList[1]); // Vind de index van de huidige card en slaat het op
-      const nextIndex = (currentIndex + 1) % order.length; // Berekent de index van de volgende card door 1 toe teveogen aan huidige Index
-      const nextCard = document.querySelector(`.${order[nextIndex]}`);
-      nextCard.parentNode.insertBefore(card, nextCard);
+
+      const cardParent = card.parentNode; // We slaan hier het dom element'Stack' in een variable op
+      const firstCard = cardParent.querySelector('.card:first-of-type'); // Je selecteert de eerste child van het stack element
+
+      cardParent.insertBefore(card, firstCard); // Bovenaan DOM plaatsen van card Element
     }, 1000);
   });
 });

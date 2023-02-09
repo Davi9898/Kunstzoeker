@@ -26,11 +26,13 @@
   position: absolute;
   top:9%;
   flex-direction: column;
+  padding: 20px;
 }
 
-.card-2 p {
+.card-2 p, .card-2 h2 {
   font-family: 'Josefin Sans', sans-serif;
 }
+
 
 .container {
   width: 100%; /* Full width */
@@ -45,10 +47,10 @@
   color: white; /* White text color */
 }
 
-.html {width: 90%; background-color: #04AA6D;} /* Green */
-.css {width: 80%; background-color: #2196F3;} /* Blue */
-.js {width: 65%; background-color: #f44336;} /* Red */
-.figma {width: 60%; background-color: #808080;} /* Dark Grey */
+.html {width: 50%; background-color: #04AA6D;} /* Green */
+.css {width: 40%; background-color: #2196F3;} /* Blue */
+.js {width: 20%; background-color: #f44336;} /* Red */
+.figma {width: 50%; background-color: #808080;} /* Dark Grey */
 
 .skill-item {
   display: flex;
@@ -137,7 +139,7 @@
 }
 
 .animate-out {
-  transform: translateY(-100%) rotate(180deg);
+  transform: translateY(-100vh) rotate(180deg);
 }
 
 
