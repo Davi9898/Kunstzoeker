@@ -1,3 +1,5 @@
+* {box-sizing:border-box}
+
 .stack {
   display: flex;
   justify-content: center;
@@ -19,15 +21,48 @@
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
-.card-1 {
-  top:8.5%;
-}
-
 .card-2 {
   background-color: #E3B448;
   position: absolute;
   top:9%;
+  flex-direction: column;
 }
+
+.card-2 p {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.container {
+  width: 100%; /* Full width */
+  background-color: #ddd; /* Grey background */
+  display: flex;
+}
+
+.skills {
+  text-align: right; /* Right-align text */
+  padding-top: 10px; /* Add top padding */
+  padding-bottom: 10px; /* Add bottom padding */
+  color: white; /* White text color */
+}
+
+.html {width: 90%; background-color: #04AA6D;} /* Green */
+.css {width: 80%; background-color: #2196F3;} /* Blue */
+.js {width: 65%; background-color: #f44336;} /* Red */
+.figma {width: 60%; background-color: #808080;} /* Dark Grey */
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.skill-bar {
+  height: 10px;
+  background-color: lightblue;
+  width: 0;
+  transition: width 0.3s ease-in-out;
+}
+
 
 .card-3 {
   background-color: #CBD18F;
@@ -47,8 +82,8 @@
   color: black;
   width: 40px;
   height: 100%;
-  margin: -2rem 4rem 0rem 0rem;
-  
+  margin: -2rem 5rem 0rem 0rem;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .card-4 {
@@ -101,8 +136,8 @@
   left: 10%;
 }
 
-
 .animate-out {
   transform: translateY(-100%) rotate(180deg);
 }
+
 
