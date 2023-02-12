@@ -1,5 +1,9 @@
 * {box-sizing:border-box}
 
+html{
+  overflow:hidden;
+}
+
 .stack {
   display: flex;
   justify-content: center;
