@@ -11,6 +11,8 @@ html{
   height: 100%;
   }
 
+
+
 .card {
   position: absolute;
   width: 300px;
@@ -24,6 +26,8 @@ html{
   border-radius: 10px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
+
+/* ####  CARD - 2 ##### */ 
 
 .card-2 {
   background-color: #E3B448;
@@ -69,6 +73,7 @@ html{
   transition: width 0.3s ease-in-out;
 }
 
+/* ####  CARD - 3 ##### */ 
 
 .card-3 {
   background-color: #CBD18F;
@@ -91,6 +96,8 @@ html{
   margin: -2rem 5rem 0rem 0rem;
   font-family: 'Josefin Sans', sans-serif;
 }
+
+/* ####  CARD - 4 ##### */ 
 
 .card-4 {
   background-color: #3A6B35;
@@ -141,6 +148,8 @@ html{
   top: 78%;
   left: 10%;
 }
+
+/* ####  Animatie ##### */ 
 
 .animate-out {
   transform: translateY(-100vh) rotate(180deg);
