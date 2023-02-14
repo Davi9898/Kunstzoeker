@@ -2,7 +2,7 @@ fetchData()
 
 function fetchData(){
     // const kunstobjecten ='https://www.rijksmuseum.nl/api/nl/collection/SK-C-5/tiles?key=Y5aZWyUP'
-    const kunstobjecten ='https://www.rijksmuseum.nl/api/nl/collection/?key=Y5aZWyUP&q=Mark&ps=40&imgonly=true&s=chronologic'
+    const kunstobjecten ='https://www.rijksmuseum.nl/api/nl/collection/?key=Y5aZWyUP&q=Mark&ps=90&imgonly=true&s=chronologic'
 
     fetch(kunstobjecten)
       .then(response => {
@@ -54,9 +54,9 @@ function createListItem(aObject)
           image.style.width = '100%';
           image.setAttribute('rijksobject-nummer', aObject.objectNumber);
 
-          // li.addEventListener('click', () => {
-          //   alert(aObject.title);
-          // })
+          li.addEventListener('click', () => {
+            alert(aObject.title);
+          })
           li.appendChild(image);
           return li;
 }
