@@ -49,13 +49,21 @@ function fetchData(){
 
 function createListItem(aObject)
 {
-  let li = document.createElement("li");
+          let li = document.createElement("li");
           let image = document.createElement("img");
           image.style.width = '100%';
           image.setAttribute('rijksobject-nummer', aObject.objectNumber);
 
           li.addEventListener('click', () => {
-            alert(aObject.title);
+            const h3 = document.createElement("h3");
+            h3.classList.add("my-class");
+            image.classList.add("schaduweffect")
+            const p = document.createElement("p");
+
+            h3.textContent = aObject.longTitle;
+            p.textContent = aObject.description;
+            image.parentNode.appendChild(h3);
+            image.parentNode.appendChild(p);
           })
           li.appendChild(image);
           return li;
