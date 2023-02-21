@@ -59,7 +59,7 @@ function createListItem(aObject) {
     
  </code>
 
-### Verder functionaliteiten 
+### Verdere functionaliteiten 
 De volgende functionaliteiten wil ik nog realiseren:
 1. SearchQuery
 2. States
@@ -95,4 +95,19 @@ Op de derde dag ben ik begonnen met het maken van het detail scherm. De bedoelin
         model.querySelector('.object-afbeelding').src = '';
       })
 </code>
-Ook is onderaan de code te zien dat er een terugbutton functionaliteit is toegevoegd. Hierdoor kan de gebruiker op telefoon als in de browser makkelijk terug navigeren.
+Ook is onderaan de code te zien dat er een terugbutton functionaliteit is toegevoegd. Hierdoor kan de gebruiker op telefoon als in de browser makkelijk terug navigeren. In de catch zit ook een error state verwerkt!
+
+  <code>
+    .catch(error => {
+        let errorState = document.querySelector('.error');
+        errorState = remove('error-hidden')
+      });
+  </code>
+  
+  
+### Verdere functionaliteiten 
+De volgende functionaliteiten wil ik nog realiseren:
+1. SearchQuery
+2. Router
+3. Modules
+4. Algehele styling
