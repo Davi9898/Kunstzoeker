@@ -61,12 +61,12 @@ function createListItem(aObject) {
 
 ### Verder functionaliteiten 
 De volgende functionaliteiten wil ik nog realiseren:
--SearchQuery
--States
--Detail scherm
--Router
--Modules
--Algehele styling
+1. SearchQuery
+2. States
+3. Detail scherm
+4. Router
+5. Modules
+6. Algehele styling
 
 ## Week 2
 
