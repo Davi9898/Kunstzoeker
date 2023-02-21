@@ -1,0 +1,170 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-color: rgb(70, 65, 65);
+    --text-color: white;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: 600;
+}
+
+header {
+    padding: 0 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+input::placeholder{
+    color: black;
+}
+
+main h2 {
+    margin-left: .5rem;
+}
+
+ul {
+    isolation: isolate;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+
+ul li img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
+  }
+
+
+ul li {
+    list-style-type: none;
+    width: 300px;
+    height: 300px;
+    margin: 4rem 1rem 0rem 1rem;
+    position: relative;
+    isolation: isolate;
+}
+
+ul li::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -1rem 0 0 -1rem;
+    width: 2rem;
+    height: 2rem;
+    border: 5px solid #f3f3f3;
+    border-top: 6px solid #9c41f2;
+    border-radius: 50%;
+    animation: spin 1s infinite linear;
+    z-index: -1;
+}
+
+h3 {
+    z-index: 3;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    color: white;
+    padding: 1rem 1.25rem;
+}
+
+.my-class {
+    color: white;
+    opacity: 1;
+}
+
+.schaduweffect {
+    filter: brightness(20%);
+}
+
+li:hover {
+    transform: scale(1.05);
+    transition: .3s ease;
+    cursor: pointer;
+}
+
+
+/* !!!!!!!!!! DETAIL PAGINA !!!!!!!!!! */
+
+.details {
+    isolation: isolate;
+    position: fixed;
+    inset: 0;
+    background: black;
+    height: 100%;
+    overflow-y: auto;
+    max-height: 100vh;
+    transition: .5s ease;
+}
+
+.details.hidden {
+    transform: translateX(-100vw);
+}
+
+.object-afbeelding {
+    width: 100%;
+    /* object-fit: contain;
+    height: 60%; */
+}
+
+
+/*!!!!!!! LOADING STATE !!!!!!!!! */
+#loading {
+    width: 2rem;
+    height: 2rem;
+    border: 5px solid #f3f3f3;
+    border-top: 6px solid #9c41f2;
+    border-radius: 50%;
+    margin: auto;
+    visibility: hidden;
+    animation: spin 1s infinite linear;
+}
+#loading.display {
+    visibility: visible;
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* BRON : https://dev.to/vaishnavs/displaying-loading-animation-on-fetch-api-calls-1e5m */
+
+/* !!!!!!!!!! ERROR STATE !!!!!!!!!! */
+
+.error.error-hidden {
+    transform: translateX(-100vw);
+}
+
+.error {
+    isolation: isolate;
+    position: fixed;
+    inset: 0;
+    background: black;
+}
