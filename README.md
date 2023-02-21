@@ -12,7 +12,7 @@ Deze opdracht spreekt mij aan omdat ik hoorde dat je bij de quote API iets minde
 
 ### Dag 1
 Op de eerste dag van Web-app from scratch ben ik bezig gegaan met het maken van een design voor het scherm van de kunstzoeker. Hieronder staan enkele schermen weergegeven
-<img src="" width="500">
+<img src="images/Schets1.jpg" width="500">
 <img src="" width="500">
 <img src="" width="500">
 <img src="" width="500">
