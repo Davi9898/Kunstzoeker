@@ -1,30 +1,25 @@
 fetchData()
 
-
-
-
-function displayLoading() { // Bron: https://dev.to/vaishnavs/displaying-loading-animation-on-fetch-api-calls-1e5m
-  if (!document.querySelector("#loading")){
-    return
+function zoekText() {
+  console.log('zoektest draait')
+  let zoekWaarde = document.querySelector('[search-input]').value 
+  if(zoekWaarde.length > 2){
+    fetchData(zoekWaarde)
   }
-  const loader = document.querySelector("#loading");
-  loader.classList.add("display");
-  
-  // to stop loading after some time
-  setTimeout(() => {
-      loader.classList.remove("display");
-  }, 5000);
 }
 
-// hiding loading 
-function hideLoading() {
-  loader.classList.remove("display");
-}
+document.querySelector('[search-input]').addEventListener('keyup', zoekText)
 
-function fetchData() {
-  
+function fetchData(query = 'vermeer'){
+
+  let parent = document.querySelector('section ul');
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+
+  console.log(query);
   // const kunstobjecten ='https://www.rijksmuseum.nl/api/nl/collection/SK-C-5/tiles?key=Y5aZWyUP'
-  const kunstobjecten = 'https://www.rijksmuseum.nl/api/nl/collection/?key=Y5aZWyUP&q=Mark&ps=100&imgonly=true&s=chronologic'
+  const kunstobjecten = 'https://www.rijksmuseum.nl/api/nl/collection/?key=Y5aZWyUP&q='+query+'&ps=9&imgonly=true&s=chronologic'
 
   fetch(kunstobjecten)
     .then(response => {
@@ -32,7 +27,7 @@ function fetchData() {
     })
     .then(data => {
       
-      console.log(data);
+      //console.log(data);
       data.artObjects.forEach((aObject) => {
         if (!aObject.hasImage) return;
 
@@ -44,11 +39,21 @@ function fetchData() {
     .catch(error => {
       console.error('Probleem gedetecteerd:', error);
     });
+
+    checkForHash();
     
 }
 
+function checkForHash(){
+  console.log(location.hash)// Weergave van specifieke hash
+  if(location.hash != ''){
+    fillObjectModal(location.hash.split('#')[1]);
+    return;
+  }
+  hideModal();
+}
+
 function createListItem(aObject) {
-  displayLoading()
   let li = document.createElement("li");
   let image = document.createElement("img");
 
@@ -57,7 +62,7 @@ function createListItem(aObject) {
   //Fetch afbeelding data
   const afbeeldingen = 'https://www.rijksmuseum.nl/api/nl/collection/' + aObject.objectNumber + '/tiles?key=Y5aZWyUP'
 
-  console.log(afbeeldingen);
+  //console.log(afbeeldingen);
 
   fetch(afbeeldingen)
     .then(response => {
@@ -96,7 +101,7 @@ function createListItem(aObject) {
     // h3.classList.add("my-class");
     // image.classList.add("schaduweffect")
 
-    fillObjectModal(aObject);
+    fillObjectModal(aObject.objectNumber);
 
   })
   li.appendChild(image);
@@ -104,32 +109,45 @@ function createListItem(aObject) {
 }
 
 function fillObjectModal(aObject){
-
+  // displayLoading()
+  console.log(aObject)
   //Fetch afbeelding data
-  const artObjectUrl = 'https://www.rijksmuseum.nl/api/nl/collection/' + aObject.objectNumber + '?key=Y5aZWyUP'
+  const artObjectUrl = 'https://www.rijksmuseum.nl/api/nl/collection/' + aObject + '?key=Y5aZWyUP'
 
   fetch(artObjectUrl)
     .then(response => {
       return response.json();
     })
     .then(response => {
+      // hideLoading()
       let model = document.querySelector('.details');
       console.log(response.artObject);
       model.querySelector('.details-title').textContent = response.artObject.longTitle;
       model.querySelector('.object-afbeelding').src = response.artObject.webImage.url;
       model.querySelector('.object-omschrijving').textContent = response.artObject.description;
-        
+      
+      if (response.artObject.description === "") {
+        return model.querySelector('.object-omschrijving').textContent = "Er is geen beschrijving hiervoor."
+      }
+
+      window.history.pushState({objectNumber:aObject}, "Kunstobject: aObject.objectNumber", "#"+aObject);
      
       model.classList.remove('hidden')
 
-      const terugButton = document.querySelector('button')
+      let terugButton = document.querySelector('button')
       terugButton.addEventListener('click', () => {
+        history.pushState("", document.title, window.location.pathname + window.location.search);
         model.classList.add('hidden');
         model.querySelector('.object-afbeelding').src = '';
       })
-      .catch(error => {
-        let errorState = document.querySelector('.error');
-        errorState = remove('error-hidden')
-      });
+      
     })
 }
+
+function hideModal(){
+  let modal = document.querySelector('.details');
+  modal.classList.add('hidden');
+  modal.querySelector('.object-afbeelding').src = '';
+}
+
+window.addEventListener('popstate', checkForHash)
