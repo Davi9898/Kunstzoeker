@@ -68,6 +68,8 @@ De volgende functionaliteiten wil ik nog realiseren:
 -Modules
 -Algehele styling
 
+## Week 2
+
 ### Dag 3
 Op de derde dag ben ik begonnen met het maken van het detail scherm. De bedoeling is dat de gebruiker een detail scherm krijgt wanneer er op een schilderij geklikt wordt. Deze schuift dan uit van links en geeft meer informatie over het kunstobject. Ik heb dit gedaan door een hidden class van een section af te halen waardoor hij 100vw verschuift naar rechts. Vervolgens wordt alle data van de API ingeladen op het scherm.
 <code>
