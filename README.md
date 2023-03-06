@@ -148,5 +148,8 @@ Wanneer de terugbutton gebruikt wordt:
 history.pushState("", document.title, window.location.pathname + window.location.search);
 </code>
 
-
+### Verdere functionaliteiten 
+De volgende functionaliteiten wil ik nog realiseren:
+1. Modules
+2. Algehele styling
 
