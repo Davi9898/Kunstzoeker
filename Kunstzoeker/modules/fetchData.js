@@ -1,18 +1,29 @@
 import { checkForHash } from "./checkForHash.js";
 import { createListItem } from "./createListItem.js";
 
-export function fetchData(query = 'vermeer'){
+export function fetchData(query = 'Nachtwacht'){
 
   let parent = document.querySelector('section ul');
   while (parent.firstChild) {
     parent.removeChild(parent.firstChild);
   }
 
-  console.log(query);
-  // const kunstobjecten ='https://www.rijksmuseum.nl/api/nl/collection/SK-C-5/tiles?key=Y5aZWyUP'
-  const kunstobjecten = 'https://www.rijksmuseum.nl/api/nl/collection/?key=Y5aZWyUP&q='+query+'&ps=9&imgonly=true&s=chronologic'
+  const artContainer = document.querySelector('main > section:nth-of-type(2)')
 
-  fetch(kunstobjecten)
+
+  const urlApi = 'https://www.rijksmuseum.nl/api/nl/collection'
+  const apiKey = 'Y5aZWyUP&q'
+  const ifImage = "imgonly=true";
+  const sortedBy = "chronologic";
+  const resultAmount = "ps=20";
+  
+  // String Interpolatie doormiddel van backticks
+  // Expressions zijn wrapped in ${}
+  const url = `${urlApi}/?key=${apiKey}&q=${query}&${resultAmount}&${ifImage}&s=${sortedBy}`;
+
+  
+
+  fetch(url)
     .then(response => {
       return response.json();
     })
@@ -24,7 +35,7 @@ export function fetchData(query = 'vermeer'){
 
         let listItem = createListItem(aObject)
         document.querySelector('section ul').appendChild(listItem)
-
+        artContainer.textContent = "";
       })
     })
     .catch(error => {

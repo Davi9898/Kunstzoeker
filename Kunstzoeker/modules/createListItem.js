@@ -3,13 +3,15 @@ import { fillObjectModal } from "./fillObjectModal.js";
 
 
 export function createListItem(aObject) {
+
     let li = document.createElement("li");
     let image = document.createElement("img");
   
-  
+    const urlApi = 'https://www.rijksmuseum.nl/api/nl/collection'
+    const apiKey = 'Y5aZWyUP&q'
   
     //Fetch afbeelding data
-    const afbeeldingen = 'https://www.rijksmuseum.nl/api/nl/collection/' + aObject.objectNumber + '/tiles?key=Y5aZWyUP'
+    const afbeeldingen = `${urlApi}/${aObject.objectNumber}/tiles?key=${apiKey}`;
   
     //console.log(afbeeldingen);
   
