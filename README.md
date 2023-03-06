@@ -1,4 +1,4 @@
-# Kunstzoeker
+# Kunstzoeker Hva
 
 ## Week 1
 
@@ -111,3 +111,53 @@ De volgende functionaliteiten wil ik nog realiseren:
 2. Router
 3. Modules
 4. Algehele styling
+
+### Dag 4
+
+Op dag 4 ben ik bezig gegaan met het toevoegen van de searchQuery aan mijn Kunstzoeker. Ik heb dit gedaan door middel van gebruik te maken van een KeyUp Eventlistener. De waarde hiervaan kun je veranderen zodat er meer letters getypt moeten zijn voordat de search begint te werken:
+
+<code>
+function zoekText() {
+    console.log('zoektest draait')
+    let zoekWaarde = document.querySelector('[search-input]').value 
+    if(zoekWaarde.length > 2){
+      fetchData(zoekWaarde)
+    }
+  }
+
+document.querySelector('[search-input]').addEventListener('keyup', zoekText);
+</code>
+
+Ook heb ik de History API toegevoegd aan mijn Kunstzoeker. Nu geeft de URL een Hash weer met het ID van het kunstobject.
+<code>
+window.history.pushState({objectNumber:aObject}, "Kunstobject: aObject.objectNumber", "#"+aObject);
+</code>
+Hier kun je zien hoe het ID wordt toegevoegd
+<code>
+function checkForHash(){
+    console.log(location.hash)// Weergave van specifieke hash
+    if(location.hash != ''){
+      fillObjectModal(location.hash.split('#')[1]);
+      return;
+    }
+    hideModal();
+  }
+</code>
+Wanneer de terugbutton gebruikt wordt:
+<code>
+history.pushState("", document.title, window.location.pathname + window.location.search);
+</code>
+
+### Verdere functionaliteiten 
+De volgende functionaliteiten wil ik nog realiseren:
+1. Modules
+2. Algehele styling
+
+## Week 3
+
+### Dag 5
+Vandaag ben ik bezig geweest met het refactoren van m'n code. Het ging erg moeizaam want het werkte niet. Uiteindelijk is het me gelukt om het werkend te krijgen. Ik ben van 10:00 tot 14:00 hier mee bezig geweest.
+<code>
+import { fillObjectModal } from "./fillObjectModal.js";
+</code>
+Uiteindelijk was het enige wat er fout ging dat ik geen .js achter bij de import had gezet, Hierdoor werkte het niet.
