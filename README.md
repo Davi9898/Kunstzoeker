@@ -153,3 +153,11 @@ De volgende functionaliteiten wil ik nog realiseren:
 1. Modules
 2. Algehele styling
 
+## Week 3
+
+### Dag 5
+Vandaag ben ik bezig geweest met het refactoren van m'n code. Het ging erg moeizaam want het werkte niet. Uiteindelijk is het me gelukt om het werkend te krijgen. Ik ben van 10:00 tot 14:00 hier mee bezig geweest.
+<code>
+import { fillObjectModal } from "./fillObjectModal.js";
+</code>
+Uiteindelijk was het enige wat er fout ging dat ik geen .js achter bij de import had gezet, Hierdoor werkte het niet.
