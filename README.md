@@ -194,6 +194,19 @@ import { fillObjectModal } from "./fillObjectModal.js";
 </code>
 Uiteindelijk was het enige wat er fout ging dat ik geen .js achter bij de import had gezet, Hierdoor werkte het niet. Ook heb ik deze dag een error state toegevoegd met behulp van Nigel. Deze werkt doormiddel van als de fetch niet uitgevoerd kan worden dan blijft de error zichtbaar. Echter als de fetch gewoon werkt wordt de textContent een lege string waardoor hij verdwijnt.
 
+### Verdere functionaliteiten 
+De volgende functionaliteiten wil ik nog realiseren:
+1. Algehele styling
+
+### Dag 6
+
+Op dag 6 ben ik bezig geweest met het toevoegen van een empty state, loading state bij het modal, heel veel bufixing, styling, design review, het maken van een flowchart en een wireframe. Ook ben ik bezig geweest om te kijken of ik de API key kon verbergen, uiteindelijk ben ik erachter gekomen dat ik waarschijnlijk moeite aan het doen was voor niets. 
+
+### Verdere functionaliteiten 
+De volgende werkzaamheden moet ik nog doen:
+1. Algehele styling
+2. Opknappen 
+
 
 ## Checklist <a name="paragraph5"></a>
 The second paragraph text
