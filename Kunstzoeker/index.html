@@ -14,13 +14,15 @@
 </head>
 <body>
     <header>
-        
-        <h1>Kunstzoeker</h1>
-        <input search-input placeholder="Typ om te zoeken" type="search">
+        <img src="images/headerimg.svg">
+        <h2>Voor al uw rijksmuseum kunstobjecten</h2>
+        <!-- <h1>Kunstzoeker</h1> -->
+        <input search-input placeholder="Typ om te zoeken" type="search" minlength="3" required>
     </header>
+
     <main>
 
-        <h2>Mooie kunst</h2>
+        
         <section>
             <ul>
                 
@@ -36,19 +38,26 @@
         <!-- Met hulp van Nigel -->
 
         <section class="details hidden">
+
+            <img src="images/headerimg.svg">
             <button>Terug</button>
             
             <article>
-                <h2 class="details-title">Object titel</h2>
-                <img class="object-afbeelding" src="" alt="">
+                <h2>Object titel</h2>
+                <img src="" alt="kunstobjectafbeelding">
             
-                <p class="object-omschrijving"></p>
+                <p></p>
             </article>
         </section>
 
-        <section class="error error-hidden">
-            <p class="error-omschrijving">Er is een fout opgetreden. Herlaad de pagina Alstublieft</p>
+        <section>
+            <div>
+                <p>Er zijn geen objecten aanwezig die relevant zijn aan uw zoekterm</p>
+               
+            </div>
         </section>
+
+    
     </main>
 
     

@@ -1,5 +1,5 @@
 import { fillObjectModal } from "./fillObjectModal.js";
-
+import keys from "../keys.js";
 
 
 export function createListItem(aObject) {
@@ -8,7 +8,7 @@ export function createListItem(aObject) {
     let image = document.createElement("img");
   
     const urlApi = 'https://www.rijksmuseum.nl/api/nl/collection'
-    const apiKey = 'Y5aZWyUP&q'
+    const apiKey = keys.API_KEY
   
     //Fetch afbeelding data
     console.log('Test: '+ aObject)
@@ -21,7 +21,7 @@ export function createListItem(aObject) {
         return response.json();
       })
       .then(images => {
-        
+        console.log(images)
         var mobileLevelIndex = 0;
   
         images.levels.forEach((level, index) => {
@@ -36,9 +36,9 @@ export function createListItem(aObject) {
         
         image.src = images.levels[mobileLevelIndex].tiles[0].url
       })
-      .finally(()=> {
-        
-      })
+      .catch(error => {
+        console.error('Probleem gedetecteerd:', error);
+      });
   
   
     

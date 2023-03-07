@@ -1,9 +1,11 @@
 import { checkForHash } from "./checkForHash.js";
 import { createListItem } from "./createListItem.js";
+import keys from "../keys.js";
 
-export function fetchData(query = 'Casper'){
+export function fetchData(query = 'Rembrandt'){
 
   let parent = document.querySelector('section ul');
+
   while (parent.firstChild) {
     parent.removeChild(parent.firstChild);
   }
@@ -12,10 +14,12 @@ export function fetchData(query = 'Casper'){
 
 
   const urlApi = 'https://www.rijksmuseum.nl/api/nl/collection'
-  const apiKey = 'Y5aZWyUP&q'
+  const apiKey = keys.API_KEY
   const ifImage = "imgonly=true";
-  const sortedBy = "chronologic";
+  const sortedBy = "relevance";
   const resultAmount = "ps=20";
+
+  console.log(query);
   
   // String Interpolatie doormiddel van backticks
   // Expressions zijn wrapped in ${}
@@ -28,14 +32,26 @@ export function fetchData(query = 'Casper'){
       return response.json();
     })
     .then(data => {
-      
+      console.log(data.artObjects)
+      console.log(data.artObjects.length)
+      if (data.artObjects.length < 1) {
+        document.querySelector('section:nth-of-type(4)').style.display = 'block';
+        return;
+      }
+
+      if (data.artObjects.length >= 1) {
+        document.querySelector('section:nth-of-type(4)').style.display = 'none';        
+      } 
+
       //console.log(data);
       data.artObjects.forEach((aObject) => {
         if (!aObject.hasImage) return;
 
         let listItem = createListItem(aObject)
         document.querySelector('section ul').appendChild(listItem)
+
         artContainer.textContent = "";
+        
       })
     })
     .catch(error => {

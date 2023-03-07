@@ -32,14 +32,6 @@ h1 {
     font-size: 2.5rem;
 }
 
-header {
-    padding: 0 5vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 1rem;
-}
-
 input::placeholder{
     color: black;
 }
@@ -83,7 +75,32 @@ ul li::before {
     width: 2rem;
     height: 2rem;
     border: 5px solid #f3f3f3;
-    border-top: 6px solid #9c41f2;
+    border-top: 6px solid #2ea44f;
+    border-radius: 50%;
+    animation: spin 1s infinite linear;
+    z-index: -1;
+}
+
+section:nth-of-type(1) {
+    position: relative;
+}
+
+section:nth-of-type(1) > h2 {
+    position: absolute;
+    
+}
+
+section > article::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -1rem 0 0 -1rem;
+    width: 2rem;
+    height: 2rem;
+    border: 5px solid #f3f3f3;
+    border-top: 6px solid #2ea44f;
     border-radius: 50%;
     animation: spin 1s infinite linear;
     z-index: -1;
@@ -115,6 +132,55 @@ li:hover {
     border-radius: 3px;
 }
 
+/* !!!!!!!!!!! Header !!!!!!!!! */
+
+header {
+    padding: 0 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+header img {
+    width: 30%; 
+    height: 100%;
+    padding-bottom: 1em;
+}
+
+@media screen and (max-width: 1200px) {
+    header img {
+        width: 50%;
+    }
+  }
+
+@media screen and (max-width: 768px) {
+    section:nth-of-type(3) > img {
+        display: none;
+    }
+}
+
+header input {
+    position: relative;
+    width: 35%;
+    height: 3em;
+    /* border-radius: .5em; */
+    box-shadow: rgba(0, 0, 0, 0.4) 5px 5px;
+    margin-top: 1em;
+    transition: .3s ease;
+}
+
+header input:hover {
+    border-radius: 1em;
+    transition: .3s ease;
+}
+
+header input::placeholder {
+    font-size: 2em;
+    position: absolute;
+    bottom: 0;
+    left: 3%;
+}
 
 /* !!!!!!!!!! DETAIL PAGINA !!!!!!!!!! */
 
@@ -164,19 +230,19 @@ li:hover {
 
 /* !!!!!!!!!! ERROR STATE !!!!!!!!!! */
 
-.error.error-hidden {
-    transform: translateX(-100vw);
-}
 
-.error {
-    isolation: isolate;
-    position: fixed;
-    inset: 0;
-    background: black;
-}
 
 
 /* !!!!!! STYLING van de Div Modal !!!!!!!!!!!! */
+
+section:nth-of-type(3) > img:nth-of-type(1) {
+    position:absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
 
 /* !!! Terug button !!! */
 button {
@@ -226,49 +292,70 @@ button:active {
  
 /* !!! Detail modal !!! */
 
-main section:nth-of-type(2) {
+.details {
+    isolation: isolate;
+    position: fixed;
+    inset: 0;
+    background: black;
+    height: 100%;
+    overflow-y: auto;
+    max-height: 100vh;
+    transition: .5s ease;
+}
+
+.details::-webkit-scrollbar {
+    display: none;
+}
+
+.details.hidden {
+    transform: translateX(-100vw);
+}
+
+main section:nth-of-type(3) {
     height: 100%;
 }
 
-section article {
+section:nth-of-type(3) article {
     display: flex;
     align-items: center;
     flex-direction:column ;
 }
 
-section article h2 {
+section:nth-of-type(3) article h2 {
     margin: 1rem;
 }
 
-section article p {
+section:nth-of-type(3) article p {
     margin: 0 3rem 5rem 3rem;
     font-weight: 300;
     line-height: 1.6rem;
     font-size: 1.3rem;
 }
 
-.object-afbeelding {
-    width: 100%;
+section:nth-of-type(3) article img {
+    width: auto;
+    height: 60vh;
     margin: 2rem 0 2rem 0;
     border-radius: 10px;
 }
 
-@media screen and (max-width: 600px) {
-    .object-afbeelding{
-        margin: 0 2rem 1rem 2rem
+@media screen and (max-width: 768px) {
+    section:nth-of-type(3) article img{
+        width: 100%;
+        height: auto;
     }
   }
 
 @media screen and (min-width: 1200px) {
-    .object-afbeelding{
+    section:nth-of-type(3) article img{
         width: 45%;
-        max-height: 50vw;
+        height: auto;
     }
   }
 
   @media screen and (min-width: 1000px) {
-    .object-afbeelding{
-        width: 45%;
-        max-height: 50vw;
+    section:nth-of-type(3) article img{
+        width: 50%;
+        height: auto;
     }
   }
