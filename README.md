@@ -160,4 +160,4 @@ Vandaag ben ik bezig geweest met het refactoren van m'n code. Het ging erg moeiz
 <code>
 import { fillObjectModal } from "./fillObjectModal.js";
 </code>
-Uiteindelijk was het enige wat er fout ging dat ik geen .js achter bij de import had gezet, Hierdoor werkte het niet.
+Uiteindelijk was het enige wat er fout ging dat ik geen .js achter bij de import had gezet, Hierdoor werkte het niet. Ook heb ik deze dag een error state toegevoegd met behulp van Nigel. Deze werkt doormiddel van als de fetch niet uitgevoerd kan worden dan blijft de error zichtbaar. Echter als de fetch gewoon werkt wordt de textContent een lege string waardoor hij verdwijnt.
