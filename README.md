@@ -26,10 +26,10 @@ The second paragraph text
 
 ## Activity Diagram <a name="paragraph3"></a>
 Om een duidelijker beeld te geven aan de gebruiker van mijn SPA heb enkele wireframes en een flowchart gemaakt.
-Hieronder zie je de wireframes van mijn SPA en de desbetreffende states.
-<img src="Kunstzoeker/images/wireflowswafs.png" width="500">
-Ook is er een bijhorend flowchart te zien om te zien welke functionaliteiten mijn SPA biedt en wat voor mogelijke uitkomsten er zijn.
-<img src="Kunstzoeker/images/flowchartWAFS.png" width="500">
+Hieronder zie je de wireframes van mijn SPA en de desbetreffende states.<br>
+<img src="Kunstzoeker/images/wireflowswafs.png" width="1000"> <br>
+Ook is er een bijhorend flowchart te zien om te zien welke functionaliteiten mijn SPA biedt en wat voor mogelijke uitkomsten er zijn.<br>
+<img src="Kunstzoeker/images/flowchartWAFS.png" width="1000"> <br>
 
 ## Logbook <a name="paragraph4"></a>
 The second paragraph text
