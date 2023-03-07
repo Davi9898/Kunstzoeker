@@ -11,6 +11,7 @@ export function createListItem(aObject) {
     const apiKey = 'Y5aZWyUP&q'
   
     //Fetch afbeelding data
+    console.log('Test: '+ aObject)
     const afbeeldingen = `${urlApi}/${aObject.objectNumber}/tiles?key=${apiKey}`;
   
     //console.log(afbeeldingen);

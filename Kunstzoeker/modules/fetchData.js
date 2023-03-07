@@ -1,7 +1,7 @@
 import { checkForHash } from "./checkForHash.js";
 import { createListItem } from "./createListItem.js";
 
-export function fetchData(query = 'Nachtwacht'){
+export function fetchData(query = 'Casper'){
 
   let parent = document.querySelector('section ul');
   while (parent.firstChild) {
