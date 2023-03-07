@@ -1,5 +1,5 @@
 import { fillObjectModal } from "./fillObjectModal.js";
-import keys from "../keys.js";
+// import keys from "../keys.js";
 
 
 export function createListItem(aObject) {
@@ -8,7 +8,7 @@ export function createListItem(aObject) {
     let image = document.createElement("img");
   
     const urlApi = 'https://www.rijksmuseum.nl/api/nl/collection'
-    const apiKey = keys.API_KEY
+    const apiKey = 'BQfKnS2c'
   
     //Fetch afbeelding data
     console.log('Test: '+ aObject)

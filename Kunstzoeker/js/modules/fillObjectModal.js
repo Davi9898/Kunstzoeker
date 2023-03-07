@@ -1,11 +1,11 @@
-import keys from "../keys.js"
+// import keys from "../keys.js"
 
 export function fillObjectModal(aObject){
     
     console.log(aObject)
     //Fetch afbeelding data
     const urlApi = 'https://www.rijksmuseum.nl/api/nl/collection'
-    const apiKey = keys.API_KEY
+    const apiKey = 'BQfKnS2c'
     const artObjectUrl = `${urlApi}/${aObject}?key=${apiKey}`
 
   

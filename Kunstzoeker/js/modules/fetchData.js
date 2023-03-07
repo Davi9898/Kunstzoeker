@@ -1,6 +1,6 @@
 import { checkForHash } from "./checkForHash.js";
 import { createListItem } from "./createListItem.js";
-import keys from "../keys.js";
+// import keys from "../keys.js";
 
 export function fetchData(query = 'Rembrandt'){
 
@@ -14,7 +14,7 @@ export function fetchData(query = 'Rembrandt'){
 
 
   const urlApi = 'https://www.rijksmuseum.nl/api/nl/collection'
-  const apiKey = keys.API_KEY
+  const apiKey = 'BQfKnS2c'
   const ifImage = "imgonly=true";
   const sortedBy = "relevance";
   const resultAmount = "ps=20";
