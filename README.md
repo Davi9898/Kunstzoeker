@@ -1,5 +1,39 @@
 # Kunstzoeker Hva
 
+# Table of contents
+1. [Introduction](#introduction)
+2. [Description](#paragraph1)
+    1. [Github Pages](#subparagraph1)
+3. [How to install](#paragraph2)
+    1. [Sections](#subparagraph2)
+4. [Activity Diagram](#paragraph3)
+5. [Logbook](#paragraph4)
+6. [Checklist](#paragraph5)
+
+## This is the introduction <a name="introduction"></a>
+Some introduction text, formatted in heading 2 style
+
+## Description <a name="paragraph1"></a>
+The first paragraph text
+
+### Github pages <a name="subparagraph1"></a>
+This is a sub paragraph, formatted in heading 3 style
+
+## How to install <a name="paragraph2"></a>
+The second paragraph text
+
+### Sections <a name="subparagraph2"></a>
+
+## Activity Diagram <a name="paragraph3"></a>
+Om een duidelijker beeld te geven aan de gebruiker van mijn SPA heb enkele wireframes en een flowchart gemaakt.
+Hieronder zie je de wireframes van mijn SPA en de desbetreffende states.
+<img src="Kunstzoeker/images/wireflowswafs.png" width="500">
+Ook is er een bijhorend flowchart te zien om te zien welke functionaliteiten mijn SPA biedt en wat voor mogelijke uitkomsten er zijn.
+<img src="Kunstzoeker/images/flowchartWAFS.png" width="500">
+
+## Logbook <a name="paragraph4"></a>
+The second paragraph text
+
 ## Week 1
 
 https://davi9898.github.io/web-app-from-scratch-2223/Kunstzoeker/
@@ -11,11 +45,9 @@ Voor dit project heb ik gekozen om de tweede user story uit te werken:
 Deze opdracht spreekt mij aan omdat ik hoorde dat je bij de quote API iets minder zou leren, en deze ook zeker te doen zou zijn voor een beginner zoals ik.
 
 ### Dag 1
-Op de eerste dag van Web-app from scratch ben ik bezig gegaan met het maken van een design voor het scherm van de kunstzoeker. Hieronder staan enkele schermen weergegeven
-<img src="images/Schets1.jpg" width="500">
-<img src="" width="500">
-<img src="" width="500">
-<img src="" width="500">
+Op de eerste dag van Web-app from scratch ben ik bezig gegaan met het maken van een design voor het scherm van de kunstzoeker. Hieronder staan enkele schermen weergegeven<br>
+<img src="Kunstzoeker/images/schets1.jpg" width="300">
+
 
 Na het realiseren van de schetsen van de schermen ben ik me gaan bezig houden met fetchen van de eerste data via de rijksmuseum API. Je doet dit door een private key aan te vragen op de website van het Rijksmuseum. Hiervoor heb je een account nodig.
 
@@ -160,4 +192,8 @@ Vandaag ben ik bezig geweest met het refactoren van m'n code. Het ging erg moeiz
 <code>
 import { fillObjectModal } from "./fillObjectModal.js";
 </code>
-Uiteindelijk was het enige wat er fout ging dat ik geen .js achter bij de import had gezet, Hierdoor werkte het niet.
+Uiteindelijk was het enige wat er fout ging dat ik geen .js achter bij de import had gezet, Hierdoor werkte het niet. Ook heb ik deze dag een error state toegevoegd met behulp van Nigel. Deze werkt doormiddel van als de fetch niet uitgevoerd kan worden dan blijft de error zichtbaar. Echter als de fetch gewoon werkt wordt de textContent een lege string waardoor hij verdwijnt.
+
+
+## Checklist <a name="paragraph5"></a>
+The second paragraph text
