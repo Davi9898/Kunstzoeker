@@ -2,6 +2,7 @@ import { checkForHash } from "./checkForHash.js";
 import { createListItem } from "./createListItem.js";
 
 
+
 export function fetchData(query = 'Rembrandt'){
 
   let parent = document.querySelector('section ul');
@@ -34,11 +35,11 @@ export function fetchData(query = 'Rembrandt'){
     .then(data => {
       console.log(data.artObjects)
       console.log(data.artObjects.length)
-      if (data.artObjects.length < 1) {
-        document.querySelector('section:nth-of-type(4)').style.display = 'block';
+      if (data.artObjects.length <= 1) {
+        document.querySelector('section:nth-of-type(4)').style.display = 'flex';
         return;
       }
-
+     
       if (data.artObjects.length >= 1) {
         document.querySelector('section:nth-of-type(4)').style.display = 'none';        
       } 
@@ -51,6 +52,8 @@ export function fetchData(query = 'Rembrandt'){
         document.querySelector('section ul').appendChild(listItem)
 
         artContainer.textContent = "";
+
+        
         
       })
     })

@@ -90,21 +90,6 @@ section:nth-of-type(1) > h2 {
     
 }
 
-section > article::before {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin: -1rem 0 0 -1rem;
-    width: 2rem;
-    height: 2rem;
-    border: 5px solid #f3f3f3;
-    border-top: 6px solid #2ea44f;
-    border-radius: 50%;
-    animation: spin 1s infinite linear;
-    z-index: -1;
-}
 
 h3 {
     z-index: 3;
@@ -125,11 +110,23 @@ h3 {
     filter: brightness(20%);
 }
 
+li {
+    transition: .3s ease;
+}
+
+li img {
+    transition: .3s ease;
+}
+
 li:hover {
     transform: scale(1.05);
     transition: .3s ease;
     cursor: pointer;
-    border-radius: 3px;
+}
+
+li img:hover {
+    border-radius: 1em;
+    transition: .3s ease;
 }
 
 /* !!!!!!!!!!! Header !!!!!!!!! */
@@ -141,6 +138,23 @@ header {
     align-items: center;
     padding-top: 1rem;
 }
+
+header h2 {
+    text-align: center;
+}
+
+/* clears the 'X' from Internet Explorer */
+input[type=search]::-ms-clear {  display: none; width : 0; height: 0; }
+input[type=search]::-ms-reveal {  display: none; width : 0; height: 0; }
+
+/* clears the 'X' from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+/* Bron https://blog.maximerouiller.com/post/remove-the-x-from-internet-explorer-and-chrome-input-type-search/ */
+
 
 header img {
     width: 30%; 
@@ -168,6 +182,15 @@ header input {
     box-shadow: rgba(0, 0, 0, 0.4) 5px 5px;
     margin-top: 1em;
     transition: .3s ease;
+    font-size: 1em;
+    padding-left: 1em;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+    header input {
+        width: 60%;
+    }
 }
 
 header input:hover {
@@ -176,10 +199,12 @@ header input:hover {
 }
 
 header input::placeholder {
-    font-size: 2em;
+    font-size: 1.5em;
     position: absolute;
-    bottom: 0;
+    bottom: 15%;
     left: 3%;
+    color: black;
+    font-weight:300;
 }
 
 /* !!!!!!!!!! DETAIL PAGINA !!!!!!!!!! */
@@ -227,11 +252,6 @@ header input::placeholder {
 }
 
 /* BRON : https://dev.to/vaishnavs/displaying-loading-animation-on-fetch-api-calls-1e5m */
-
-/* !!!!!!!!!! ERROR STATE !!!!!!!!!! */
-
-
-
 
 /* !!!!!! STYLING van de Div Modal !!!!!!!!!!!! */
 
@@ -292,6 +312,27 @@ button:active {
  
 /* !!! Detail modal !!! */
 
+section:nth-of-type(3) > img {
+    margin-top: 1em;
+}
+
+
+section > article::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    margin: -1rem 0 0 -1rem;
+    width: 2rem;
+    height: 2rem;
+    border: 5px solid #f3f3f3;
+    border-top: 6px solid #2ea44f;
+    border-radius: 50%;
+    animation: spin 1s infinite linear;
+    z-index: -1;
+}
+
 .details {
     isolation: isolate;
     position: fixed;
@@ -322,40 +363,68 @@ section:nth-of-type(3) article {
 }
 
 section:nth-of-type(3) article h2 {
-    margin: 1rem;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
 section:nth-of-type(3) article p {
-    margin: 0 3rem 5rem 3rem;
+    margin: 0 40px 20px 40px;
     font-weight: 300;
     line-height: 1.6rem;
     font-size: 1.3rem;
 }
 
 section:nth-of-type(3) article img {
-    width: auto;
-    height: 60vh;
+
     margin: 2rem 0 2rem 0;
     border-radius: 10px;
 }
 
 @media screen and (max-width: 768px) {
     section:nth-of-type(3) article img{
-        width: 100%;
-        height: auto;
-    }
-  }
-
-@media screen and (min-width: 1200px) {
-    section:nth-of-type(3) article img{
-        width: 45%;
-        height: auto;
-    }
-  }
-
-  @media screen and (min-width: 1000px) {
-    section:nth-of-type(3) article img{
         width: 50%;
         height: auto;
     }
   }
+
+@media screen and (min-width: 1000px) {
+    section:nth-of-type(3) article img{
+        width: 30%;
+        height: auto;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    section:nth-of-type(3) article img{
+        width: 70%;
+        height: auto;
+    }
+  }
+
+
+/* !!!!! EMPTY STATE !!!!!! */
+
+section:nth-of-type(4) > p {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 2em;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* !!!!!!!!!! ERROR STATE !!!!!!!!!! */
+
+section:nth-of-type(2) > p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 2em;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: rgb(255, 74, 74);
+    text-align: center;
+}
