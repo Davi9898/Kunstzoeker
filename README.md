@@ -207,6 +207,10 @@ De volgende werkzaamheden moet ik nog doen:
 1. Algehele styling
 2. Opknappen 
 
+### Dag 7
+
+Op dag 7 ben ik bezig geweest met algemene styling. Ook moet ik nog m'n READme in orde maken. Met algemene styling bedoel ik het responsive maken van m'n webapplicatie, ook testen op bugs. 
+
 
 ## Checklist <a name="paragraph5"></a>
 The second paragraph text
