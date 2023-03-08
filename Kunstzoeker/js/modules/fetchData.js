@@ -3,6 +3,7 @@ import { createListItem } from "./createListItem.js";
 
 
 
+
 export function fetchData(query = 'Rembrandt'){
 
   let parent = document.querySelector('section ul');
@@ -26,7 +27,9 @@ export function fetchData(query = 'Rembrandt'){
   // Expressions zijn wrapped in ${}
   const url = `${urlApi}/?key=${apiKey}&q=${query}&${resultAmount}&${ifImage}&s=${sortedBy}`;
 
-  
+  document.querySelector('section:nth-of-type(4) > p').style.display = 'none';
+
+  // return Om Error state te testen.
 
   fetch(url)
     .then(response => {
@@ -35,14 +38,14 @@ export function fetchData(query = 'Rembrandt'){
     .then(data => {
       console.log(data.artObjects)
       console.log(data.artObjects.length)
+
       if (data.artObjects.length <= 1) {
-        document.querySelector('section:nth-of-type(4)').style.display = 'flex';
+        document.querySelector('section:nth-of-type(4) > p').style.display = 'flex';
         return;
       }
-     
-      if (data.artObjects.length >= 1) {
-        document.querySelector('section:nth-of-type(4)').style.display = 'none';        
-      } 
+      
+       
+      
 
       //console.log(data);
       data.artObjects.forEach((aObject) => {
