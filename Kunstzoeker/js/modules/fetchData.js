@@ -1,6 +1,6 @@
 import { checkForHash } from "./checkForHash.js";
 import { createListItem } from "./createListItem.js";
-// import keys from "../keys.js";
+
 
 export function fetchData(query = 'Rembrandt'){
 

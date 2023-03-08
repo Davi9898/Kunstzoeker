@@ -1,5 +1,3 @@
-// import keys from "../keys.js"
-
 export function fillObjectModal(aObject){
     
     console.log(aObject)
