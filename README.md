@@ -3,10 +3,10 @@
 <img src="Kunstzoeker/images/headerreadme.png" width="1000">
 
 # Table of contents
-1. [Introduction](#introduction)
-2. [Description](#paragraph1)
+1. [Inleiding](#introduction)
+2. [Omschrijving](#paragraph1)
     1. [Github Pages](#subparagraph1)
-3. [How to install](#paragraph2)
+3. [Install](#paragraph2)
     1. [Sections](#subparagraph2)
 4. [Activity Diagram](#paragraph3)
 5. [Logbook](#paragraph4)
@@ -17,19 +17,30 @@
 6. [Functions](#paragraph5)
 7. [Checklist](#paragraph6)
 
-## This is the introduction <a name="introduction"></a>
-Some introduction text, formatted in heading 2 style
+## Inleiding <a name="introduction"></a>
+Voor dit project heb ik gekozen om de tweede user story uit te werken:
 
-## Description <a name="paragraph1"></a>
-The first paragraph text
+2. As an art lover, I want to be able to search and view art from the Rijksmuseum at home, so that I can still enjoy art during a lockdown Rijksmuseum - RijksData API
+
+Deze opdracht spreekt mij aan omdat ik hoorde dat je bij de quote API iets minder zou leren, en deze ook zeker te doen zou zijn voor een beginner zoals ik.
+
+## Omschrijving <a name="paragraph1"></a>
+Deze repository representeert een Single Page Application die gebouwd is door Daniël Vink. De single application is een kunstzoeker waarin je kan zoeken naar kunstobjecten die de rijksmuseum in haar database heeft staan. Deze kunstobjecten bewerk ik zodat ze als een lijst weergegeven worden in mijn applicatie.
 
 ### Github pages <a name="subparagraph1"></a>
-This is a sub paragraph, formatted in heading 3 style
+[This is a sub paragraph, formatted in heading 3 style](https://davi9898.github.io/web-app-from-scratch-2223/Kunstzoeker/)
 
-## How to install <a name="paragraph2"></a>
-The second paragraph text
+## install <a name="paragraph2"></a>
+Om deze applicatie ook te gebruiken moet je het volgende doen.
+1. Clone de repository
+2. Maak een Rijksmuseum account aan op deze website: https://www.rijksmuseum.nl/en/research/conduct-research/data
+3. Vraag in de geadvanceerde instellingen je eigen API key aan.
+4. Vervang deze door de API key die bij fillObjectModal.js, fetchData.js en createListItem.js staan. 
+5. Run je applicatie op een Live Server 
+
 
 ### Sections <a name="subparagraph2"></a>
+Deze applicatie is niet zo zeer complex dat het meerdere sections heeft. Je kan de applicatie gebruiken om te zoeken naar kunstobjecten. Wanneer een gebruiker klikt op een kunstobject zal deze een modal uitschuiven. Hier staat de informatie en een vergroot plaatje van het kunstobject op gepresenteerd. Vervolgens kun je op de back button drukken om terug te gaan naar het hoofdscherm
 
 ## Activity Diagram <a name="paragraph3"></a>
 Om een duidelijker beeld te geven aan de gebruiker van mijn SPA heb enkele wireframes en een flowchart gemaakt.
@@ -42,14 +53,6 @@ Ook is er een bijhorend flowchart te zien om te zien welke functionaliteiten mij
 The second paragraph text
 
 ## Week 1 <a name="week1"></a>
-
-https://davi9898.github.io/web-app-from-scratch-2223/Kunstzoeker/
-
-Voor dit project heb ik gekozen om de tweede user story uit te werken:
-
-2. As an art lover, I want to be able to search and view art from the Rijksmuseum at home, so that I can still enjoy art during a lockdown Rijksmuseum - RijksData API
-
-Deze opdracht spreekt mij aan omdat ik hoorde dat je bij de quote API iets minder zou leren, en deze ook zeker te doen zou zijn voor een beginner zoals ik.
 
 ### Dag 1
 Op de eerste dag van Web-app from scratch ben ik bezig gegaan met het maken van een design voor het scherm van de kunstzoeker. Hieronder staan enkele schermen weergegeven<br>
