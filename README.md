@@ -63,7 +63,7 @@ Ik liep als allereerst tegen het probleem aan dat de images die gefetched worden
 
 De API van Rijksmuseum biedt de functie om verschillende tiles te fetchen. Deze tiles staan in een array en hebben allemaal verschillende groottes. Door in JavaScript een if statement te schrijven waarin je meegeeft dat de img niet groter mag zijn dan aangegeven waardes. Zorg je ervoor dat de image die gereturned wordt de juiste afmetingen heeft. Hierdoor is de img grootte klein en worden ze sneller geladen. Interessant om te vermelden is dat ik ook heb gekeken naar LazyLoading. Ik kreeg dit niet aan de praat.
 
-<code> 
+```
 function createListItem(aObject) {
   displayLoading()
   let li = document.createElement("li");
@@ -89,7 +89,7 @@ function createListItem(aObject) {
       image.src = images.levels[mobileLevelIndex].tiles[0].url
     })
     
- </code>
+ ```
 
 ### Verdere functionaliteiten 
 De volgende functionaliteiten wil ik nog realiseren:
@@ -104,7 +104,7 @@ De volgende functionaliteiten wil ik nog realiseren:
 
 ### Dag 3
 Op de derde dag ben ik begonnen met het maken van het detail scherm. De bedoeling is dat de gebruiker een detail scherm krijgt wanneer er op een schilderij geklikt wordt. Deze schuift dan uit van links en geeft meer informatie over het kunstobject. Ik heb dit gedaan door een hidden class van een section af te halen waardoor hij 100vw verschuift naar rechts. Vervolgens wordt alle data van de API ingeladen op het scherm.
-<code>
+```
  const artObjectUrl = 'https://www.rijksmuseum.nl/api/nl/collection/' + aObject.objectNumber + '?key=Y5aZWyUP'
 
   fetch(artObjectUrl)
@@ -126,15 +126,15 @@ Op de derde dag ben ik begonnen met het maken van het detail scherm. De bedoelin
         model.classList.add('hidden');
         model.querySelector('.object-afbeelding').src = '';
       })
-</code>
+```
 Ook is onderaan de code te zien dat er een terugbutton functionaliteit is toegevoegd. Hierdoor kan de gebruiker op telefoon als in de browser makkelijk terug navigeren. In de catch zit ook een error state verwerkt!
 
-  <code>
+  ```
     .catch(error => {
         let errorState = document.querySelector('.error');
         errorState = remove('error-hidden')
       });
-  </code>
+  ```
   
   
 ### Verdere functionaliteiten 
@@ -148,7 +148,7 @@ De volgende functionaliteiten wil ik nog realiseren:
 
 Op dag 4 ben ik bezig gegaan met het toevoegen van de searchQuery aan mijn Kunstzoeker. Ik heb dit gedaan door middel van gebruik te maken van een KeyUp Eventlistener. De waarde hiervaan kun je veranderen zodat er meer letters getypt moeten zijn voordat de search begint te werken:
 
-<code>
+```
 function zoekText() {
     console.log('zoektest draait')
     let zoekWaarde = document.querySelector('[search-input]').value 
@@ -158,14 +158,14 @@ function zoekText() {
   }
 
 document.querySelector('[search-input]').addEventListener('keyup', zoekText);
-</code>
+```
 
 Ook heb ik de History API toegevoegd aan mijn Kunstzoeker. Nu geeft de URL een Hash weer met het ID van het kunstobject.
-<code>
+```
 window.history.pushState({objectNumber:aObject}, "Kunstobject: aObject.objectNumber", "#"+aObject);
-</code>
+```
 Hier kun je zien hoe het ID wordt toegevoegd
-<code>
+```
 function checkForHash(){
     console.log(location.hash)// Weergave van specifieke hash
     if(location.hash != ''){
@@ -174,11 +174,11 @@ function checkForHash(){
     }
     hideModal();
   }
-</code>
+```
 Wanneer de terugbutton gebruikt wordt:
-<code>
+```
 history.pushState("", document.title, window.location.pathname + window.location.search);
-</code>
+```
 
 ### Verdere functionaliteiten 
 De volgende functionaliteiten wil ik nog realiseren:
