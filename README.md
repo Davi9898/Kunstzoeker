@@ -8,7 +8,12 @@
     1. [Sections](#subparagraph2)
 4. [Activity Diagram](#paragraph3)
 5. [Logbook](#paragraph4)
-6. [Checklist](#paragraph5)
+    1. [Week 1](#week1)
+    2. [Week 2](#week2)
+    3. [Week 3](#week3)
+    4. [Week 4](#week4)
+6. [Functions](#paragraph5)
+7. [Checklist](#paragraph6)
 
 ## This is the introduction <a name="introduction"></a>
 Some introduction text, formatted in heading 2 style
@@ -34,7 +39,7 @@ Ook is er een bijhorend flowchart te zien om te zien welke functionaliteiten mij
 ## Logbook <a name="paragraph4"></a>
 The second paragraph text
 
-## Week 1
+## Week 1 <a name="week1"></a>
 
 https://davi9898.github.io/web-app-from-scratch-2223/Kunstzoeker/
 
@@ -63,7 +68,7 @@ Ik liep als allereerst tegen het probleem aan dat de images die gefetched worden
 
 De API van Rijksmuseum biedt de functie om verschillende tiles te fetchen. Deze tiles staan in een array en hebben allemaal verschillende groottes. Door in JavaScript een if statement te schrijven waarin je meegeeft dat de img niet groter mag zijn dan aangegeven waardes. Zorg je ervoor dat de image die gereturned wordt de juiste afmetingen heeft. Hierdoor is de img grootte klein en worden ze sneller geladen. Interessant om te vermelden is dat ik ook heb gekeken naar LazyLoading. Ik kreeg dit niet aan de praat.
 
-<code> 
+```
 function createListItem(aObject) {
   displayLoading()
   let li = document.createElement("li");
@@ -89,7 +94,7 @@ function createListItem(aObject) {
       image.src = images.levels[mobileLevelIndex].tiles[0].url
     })
     
- </code>
+ ```
 
 ### Verdere functionaliteiten 
 De volgende functionaliteiten wil ik nog realiseren:
@@ -100,11 +105,11 @@ De volgende functionaliteiten wil ik nog realiseren:
 5. Modules
 6. Algehele styling
 
-## Week 2
+## Week 2 <a name="week2"></a>
 
 ### Dag 3
 Op de derde dag ben ik begonnen met het maken van het detail scherm. De bedoeling is dat de gebruiker een detail scherm krijgt wanneer er op een schilderij geklikt wordt. Deze schuift dan uit van links en geeft meer informatie over het kunstobject. Ik heb dit gedaan door een hidden class van een section af te halen waardoor hij 100vw verschuift naar rechts. Vervolgens wordt alle data van de API ingeladen op het scherm.
-<code>
+```
  const artObjectUrl = 'https://www.rijksmuseum.nl/api/nl/collection/' + aObject.objectNumber + '?key=Y5aZWyUP'
 
   fetch(artObjectUrl)
@@ -126,15 +131,15 @@ Op de derde dag ben ik begonnen met het maken van het detail scherm. De bedoelin
         model.classList.add('hidden');
         model.querySelector('.object-afbeelding').src = '';
       })
-</code>
+```
 Ook is onderaan de code te zien dat er een terugbutton functionaliteit is toegevoegd. Hierdoor kan de gebruiker op telefoon als in de browser makkelijk terug navigeren. In de catch zit ook een error state verwerkt!
 
-  <code>
+  ```
     .catch(error => {
         let errorState = document.querySelector('.error');
         errorState = remove('error-hidden')
       });
-  </code>
+  ```
   
   
 ### Verdere functionaliteiten 
@@ -148,7 +153,7 @@ De volgende functionaliteiten wil ik nog realiseren:
 
 Op dag 4 ben ik bezig gegaan met het toevoegen van de searchQuery aan mijn Kunstzoeker. Ik heb dit gedaan door middel van gebruik te maken van een KeyUp Eventlistener. De waarde hiervaan kun je veranderen zodat er meer letters getypt moeten zijn voordat de search begint te werken:
 
-<code>
+```
 function zoekText() {
     console.log('zoektest draait')
     let zoekWaarde = document.querySelector('[search-input]').value 
@@ -158,14 +163,14 @@ function zoekText() {
   }
 
 document.querySelector('[search-input]').addEventListener('keyup', zoekText);
-</code>
+```
 
 Ook heb ik de History API toegevoegd aan mijn Kunstzoeker. Nu geeft de URL een Hash weer met het ID van het kunstobject.
-<code>
+```
 window.history.pushState({objectNumber:aObject}, "Kunstobject: aObject.objectNumber", "#"+aObject);
-</code>
+```
 Hier kun je zien hoe het ID wordt toegevoegd
-<code>
+```
 function checkForHash(){
     console.log(location.hash)// Weergave van specifieke hash
     if(location.hash != ''){
@@ -174,24 +179,24 @@ function checkForHash(){
     }
     hideModal();
   }
-</code>
+```
 Wanneer de terugbutton gebruikt wordt:
-<code>
+```
 history.pushState("", document.title, window.location.pathname + window.location.search);
-</code>
+```
 
 ### Verdere functionaliteiten 
 De volgende functionaliteiten wil ik nog realiseren:
 1. Modules
 2. Algehele styling
 
-## Week 3
+## Week 3 <a name="week3"></a>
 
 ### Dag 5
 Vandaag ben ik bezig geweest met het refactoren van m'n code. Het ging erg moeizaam want het werkte niet. Uiteindelijk is het me gelukt om het werkend te krijgen. Ik ben van 10:00 tot 14:00 hier mee bezig geweest.
-<code>
+```
 import { fillObjectModal } from "./fillObjectModal.js";
-</code>
+```
 Uiteindelijk was het enige wat er fout ging dat ik geen .js achter bij de import had gezet, Hierdoor werkte het niet. Ook heb ik deze dag een error state toegevoegd met behulp van Nigel. Deze werkt doormiddel van als de fetch niet uitgevoerd kan worden dan blijft de error zichtbaar. Echter als de fetch gewoon werkt wordt de textContent een lege string waardoor hij verdwijnt.
 
 ### Verdere functionaliteiten 
@@ -207,10 +212,210 @@ De volgende werkzaamheden moet ik nog doen:
 1. Algehele styling
 2. Opknappen 
 
+###Week 4 <a name="week4"></a>
+
 ### Dag 7
 
 Op dag 7 ben ik bezig geweest met algemene styling. Ook moet ik nog m'n READme in orde maken. Met algemene styling bedoel ik het responsive maken van m'n webapplicatie, ook testen op bugs. 
 
+### Functions <a name="paragraph5"></a>
+Bij dit onderdeel licht ik graag toe welke functies ik gemaakt heb en onderling in modules heb gestopt. Dit heb ik gedaan omdat we bij de HVA een functional programming werkwijze hebben.
 
-## Checklist <a name="paragraph5"></a>
-The second paragraph text
+```js
+
+export function fetchData(query = 'Rembrandt') {
+
+  let parent = document.querySelector('section ul');
+
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+
+  const artContainer = document.querySelector('main > section:nth-of-type(2)')
+
+  const urlApi = 'https://www.rijksmuseum.nl/api/nl/collection'
+  const apiKey = 'BQfKnS2c'
+  const ifImage = "imgonly=true";
+  const sortedBy = "relevance";
+  const resultAmount = "ps=20";
+
+  // String Interpolatie doormiddel van backticks
+  // Expressions zijn wrapped in ${}
+  const url = `${urlApi}/?key=${apiKey}&q=${query}&${resultAmount}&${ifImage}&s=${sortedBy}`;
+
+  document.querySelector('section:nth-of-type(4) > p').style.display = 'none';
+
+  // return Om Error state te testen.
+
+  fetch(url)
+    .then(response => {
+      return response.json();
+    })
+    .then(data => {
+   
+      if (data.artObjects.length <= 1) {
+        document.querySelector('section:nth-of-type(4) > p').style.display = 'flex';
+        return;
+      }
+
+      data.artObjects.forEach((aObject) => {
+        if (!aObject.hasImage) return;
+
+        let listItem = createListItem(aObject)
+        document.querySelector('section ul').appendChild(listItem)
+
+        artContainer.textContent = "";
+
+      })
+    })
+    .catch(error => {
+      console.error('Probleem gedetecteerd:', error);
+    });
+  checkForHash();
+}
+
+```
+
+Fetch om query mee uit te voeren, List items toe te voegen, error state. Ook verwijderen we de hele firstChild van de parent om vervolgens een nieuwe toe te voegen. als er gezocht wordt. Ook creëeren we hier de list items door de functie aan te roepen. Helemaal aan het einde van onze fetch voeren we de checkForHash() functie uit.
+
+```js
+
+export function checkForHash() {
+  if (location.hash != '') { // De waarde wordt uitgelezen 
+    fillObjectModal(location.hash.split('#')[1]); // [1] = ObjectID Alles na het hekje door split
+    return;
+  }
+  hideModal();
+}
+
+```
+Met deze functie splitsen we het hekje van het objectID zodat we deze kunnen toevoegen aan onze state in de window
+```js
+
+export function createListItem(aObject) {
+
+  let li = document.createElement("li");
+  let image = document.createElement("img");
+
+  const urlApi = 'https://www.rijksmuseum.nl/api/nl/collection'
+  const apiKey = 'BQfKnS2c'
+
+  //Fetch afbeelding data
+
+  const afbeeldingen = `${urlApi}/${aObject.objectNumber}/tiles?key=${apiKey}`;
+
+  fetch(afbeeldingen)
+    .then(response => {
+      return response.json();
+    })
+    .then(images => {
+
+      var mobileLevelIndex = 0;
+
+      images.levels.forEach((level, index) => {
+        if (level.width <= 750 && level.width > 250) {
+          if (images.levels[index].tiles.length == 1) {
+            mobileLevelIndex = index;
+
+          }
+        }
+      })
+      image.src = images.levels[mobileLevelIndex].tiles[0].url
+    })
+    .catch(error => {
+      console.error('Probleem gedetecteerd:', error);
+    });
+
+  image.setAttribute('rijksobject-nummer', aObject.objectNumber);
+
+  li.addEventListener('click', () => {
+    fillObjectModal(aObject.objectNumber);
+  })
+  li.appendChild(image);
+  return li;
+}
+
+```
+Hier halen we en creëeren we het Listitem door naar de index van de tiles te zoeken die een specifieke width hebben. Hierdoor krijgen we altijd kleine plaatjes waardoor alles sneller laadt.
+```js
+
+export function fillObjectModal(aObject) { 
+
+  //Fetch afbeelding data
+  const urlApi = 'https://www.rijksmuseum.nl/api/nl/collection'
+  const apiKey = 'BQfKnS2c'
+  const artObjectUrl = `${urlApi}/${aObject}?key=${apiKey}`
+
+  fetch(artObjectUrl)
+    .then(response => {
+      return response.json();
+    })
+    .then(response => {
+
+      let modal = document.querySelector('.details');
+
+      modal.querySelector('section:nth-of-type(3) article h2').textContent = response.artObject.longTitle;
+      modal.querySelector('section:nth-of-type(3) article img').src = response.artObject.webImage.url;
+      modal.querySelector('section:nth-of-type(3) article p').textContent = response.artObject.description;
+
+      // wanneer description leeg is toon anders..
+      if (!response.artObject || !response.artObject.description) {
+        modal.querySelector('section:nth-of-type(3) article p').textContent = "Er is geen beschrijving voor dit kunstobject";
+      } else {
+        modal.querySelector('section:nth-of-type(3) article p').textContent = response.artObject.description;
+      }
+
+      // History API Method     #dataObject            N/A                     
+      window.history.pushState({ objectNumber: aObject }, null, "#" + aObject);
+
+      modal.classList.remove('hidden')
+
+      let terugButton = document.querySelector('button')
+      terugButton.addEventListener('click', () => {
+        //Nieuwe state maken, empty
+        history.pushState("", null, window.location.pathname + window.location.search);
+
+        modal.classList.add('hidden');
+
+        modal.querySelector('section:nth-of-type(3) article img').src = '';
+      })
+        .catch(error => {
+          console.error('Probleem gedetecteerd:', error);
+        });
+    })
+}
+
+```
+Hiermee vullen we het Modal. Ook gebruiken we hier de window.history.pushState zodat er een hash met het objectID in de URL komt te staan.
+```js
+
+export function hideModal() {
+  let modal = document.querySelector('.details');
+  modal.classList.add('hidden');
+  modal.querySelector('section:nth-of-type(3) article img').src = '';
+}
+
+```
+Hiermee verbergen we de Modal.
+```js
+
+export function zoekText() {
+
+  let zoekWaarde = document.querySelector('header input').value
+  if (zoekWaarde.length > 2 && zoekWaarde != '') {
+    fetchData(zoekWaarde)
+  } else if (zoekWaarde.length < 2) {
+    fetchData('Rembrandt')
+  }
+
+}
+
+```
+De zoekText functie zorgt er voor dat we een query kunnen uitvoeren. 
+
+## Checklist <a name="paragraph6"></a>
+Er kan natuurlijk altijd iets verbeterd worden. Hier een lijst van onderdelen die mooier zouden kunnen:
+* Afvangen van 403 errors
+* Desktop versie
+* Meerdere pagina's voor gebruikers
+* Meer informatie voor de gebruiker op de homepagina
