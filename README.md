@@ -33,7 +33,7 @@ Deze repository representeert een Single Page Application die gebouwd is door Da
 ## install <a name="paragraph2"></a>
 Om deze applicatie ook te gebruiken moet je het volgende doen.
 1. Clone de repository
-2. Maak een Rijksmuseum account aan op deze website: https://www.rijksmuseum.nl/en/research/conduct-research/data
+2. Maak een Rijksmuseum account aan op deze <a href="https://www.rijksmuseum.nl/en/research/conduct-research/data">website</a>
 3. Vraag in de geadvanceerde instellingen je eigen API key aan.
 4. Vervang deze door de API key die bij fillObjectModal.js, fetchData.js en createListItem.js staan. 
 5. Run je applicatie op een Live Server 
