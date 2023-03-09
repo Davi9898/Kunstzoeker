@@ -7,6 +7,7 @@ fetchData()
 
 
 
-document.querySelector('[search-input]').addEventListener('keyup', zoekText)
+document.querySelector('header input').addEventListener('keyup', zoekText)
 
+// voegt popstate event toe aan het window object, checkForHash wordt aangeroepen
 window.addEventListener('popstate', checkForHash)
