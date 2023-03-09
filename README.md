@@ -1,4 +1,4 @@
-# Kunstzoeker Hva
+# Kunstzoeker
 
 <img src="Kunstzoeker/images/headerreadme.png" width="1000">
 
