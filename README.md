@@ -28,7 +28,7 @@ Deze opdracht spreekt mij aan omdat ik hoorde dat je bij de quote API iets minde
 Deze repository representeert een Single Page Application die gebouwd is door Daniël Vink. De single application is een kunstzoeker waarin je kan zoeken naar kunstobjecten die de rijksmuseum in haar database heeft staan. Deze kunstobjecten bewerk ik zodat ze als een lijst weergegeven worden in mijn applicatie.
 
 ### Github pages <a name="subparagraph1"></a>
-[This is a sub paragraph, formatted in heading 3 style](https://davi9898.github.io/web-app-from-scratch-2223/Kunstzoeker/)
+(https://davi9898.github.io/web-app-from-scratch-2223/Kunstzoeker/)
 
 ## install <a name="paragraph2"></a>
 Om deze applicatie ook te gebruiken moet je het volgende doen.
