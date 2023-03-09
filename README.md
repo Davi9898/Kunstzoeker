@@ -1,5 +1,7 @@
 # Kunstzoeker Hva
 
+<img src="Kunstzoeker/images/headerreadme.png" width="1000">
+
 # Table of contents
 1. [Introduction](#introduction)
 2. [Description](#paragraph1)
