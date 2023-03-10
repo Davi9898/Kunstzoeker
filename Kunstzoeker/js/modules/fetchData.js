@@ -30,21 +30,22 @@ export function fetchData(query = 'Rembrandt') {
       return response.json();
     })
     .then(data => {
-   
+
+      // Empty state
       if (data.artObjects.length <= 1) {
         document.querySelector('section:nth-of-type(4) > p').style.display = 'flex';
         return;
       }
 
-      data.artObjects.forEach((aObject) => {
-        if (!aObject.hasImage) return;
+      // Images filteren die een image hebben en map roept het createListItem aan 
+      const listItems = data.artObjects.filter(aObject => aObject.hasImage).map(aObject => createListItem(aObject));
 
-        let listItem = createListItem(aObject)
-        document.querySelector('section ul').appendChild(listItem)
+      // Append de list items aan het parent element
+      // We gebruiken de spread operator om van de array met nodes, losse nodes te maken om
+      // gebruik te kunnen maken van de append method
+      parent.append(...listItems);
 
-        artContainer.textContent = "";
-
-      })
+      artContainer.textContent = "";
     })
     .catch(error => {
       console.error('Probleem gedetecteerd:', error);
